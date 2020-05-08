@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
+import Lyrics from './lyrics/Lyrics';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to React Playground</h1>
-      </header>
-    </div>
+    <Lyrics />
   );
 }
 
