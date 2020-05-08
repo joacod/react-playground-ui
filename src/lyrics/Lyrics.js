@@ -1,14 +1,14 @@
 import React from 'react';
 import LyricsSearch from './LyricsSearch';
 import LyricsDisplay from './LyricsDisplay';
+import { Container } from '@material-ui/core';
 
 function Lyrics() {
   return (
-    <div>
-      <h1>Welcome to React Playground</h1>
+    <Container>
       <LyricsSearch />
       <LyricsDisplay />
-    </div>
+    </Container>
   );
 }
 

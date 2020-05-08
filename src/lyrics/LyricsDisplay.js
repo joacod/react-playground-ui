@@ -1,11 +1,19 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Card, TextField } from '@material-ui/core';
 
 function LyricsDisplay() {
   return (
-    <Container>
+    <Card>
         <h1>Lyrics Display</h1>
-    </Container>
+        <TextField
+          id="lyrics"
+          label="Multiline"
+          multiline
+          rows={10}
+          defaultValue="Search for a Lyric."
+          variant="outlined"
+        />
+    </Card>
   );
 }
 

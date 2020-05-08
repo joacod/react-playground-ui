@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import Navigation from './navigation/Navigation';
 import Lyrics from './lyrics/Lyrics';
 
 function App() {
   return (
-    <Lyrics />
+    <div>
+      <Navigation />
+      <Lyrics />
+    </div>
   );
 }
 
