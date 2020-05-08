@@ -1,8 +1,11 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
 
 function LyricsDisplay() {
   return (
-    <h1>Lyrics Display</h1>
+    <Container>
+        <h1>Lyrics Display</h1>
+    </Container>
   );
 }
 
