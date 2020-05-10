@@ -21,7 +21,7 @@ function LyricsSearch() {
   return (
     <Card>        
         <form className={classes.form}>
-          <h1>Lyrics Search</h1>
+          <h1>Find Lyrics</h1>
           <TextField id="artist" label="Artist" variant="outlined"
             InputProps={{
               endAdornment: (

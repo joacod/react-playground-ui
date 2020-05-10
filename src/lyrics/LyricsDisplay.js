@@ -4,13 +4,12 @@ import { Card, TextField } from '@material-ui/core';
 function LyricsDisplay() {
   return (
     <Card>
-        <h1>Lyrics Display</h1>
+        <h1>Lyrics</h1>
         <TextField
           id="lyrics"
-          label="Multiline"
+          label="Song Lyric"
           multiline
           rows={10}
-          defaultValue="Search for a Lyric."
           variant="outlined"
         />
     </Card>
