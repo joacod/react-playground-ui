@@ -2,9 +2,9 @@
 React Playground using [create-react-app](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [React Router](https://reacttraining.com/react-router/)
 
 <p align="center">
-  <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/800px-React.svg.png">
-  <img height="200" src="https://material-ui.com/static/logo.png">
-  <img height="200" src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png">
+  <img height="200" valign="middle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/800px-React.svg.png">
+  <img height="200" valign="middle" src="https://material-ui.com/static/logo.png">
+  <img height="100" valign="middle" src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png">
 </p>
 
 ## Notes
@@ -19,7 +19,7 @@ What we get from this:
 - We can practice different approaches in React
 
 ## Prerequisites
-- [Install React](https://reactjs.org/)
+- [Get familiar with React](https://reactjs.org/)
 - [VS Code Extension for React Snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 
 ## How to Run it
