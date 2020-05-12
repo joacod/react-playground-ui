@@ -1,9 +1,10 @@
 # React Playground
-React Playground using [create-react-app](https://github.com/facebook/create-react-app) and [Material-UI](https://material-ui.com/)
+React Playground using [create-react-app](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [React Router](https://reacttraining.com/react-router/)
 
 <p align="center">
   <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/800px-React.svg.png">
   <img height="200" src="https://material-ui.com/static/logo.png">
+  <img height="200" src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png">
 </p>
 
 ## Notes

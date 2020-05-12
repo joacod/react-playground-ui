@@ -8,11 +8,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import InfoIcon from '@material-ui/icons/Info';
 import clsx from 'clsx';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect
+} from "react-router-dom";
+import ListItemLink from './ListItemLink';
+import Lyrics from '../lyrics/Lyrics';
+import About from '../about/About';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,16 +66,15 @@ function Navigation() {
         onKeyDown={toggleDrawer(directionOfSidebar, false)}
       >
         <List>
-          <ListItem button key='lyrics'>
-            <ListItemIcon><MusicNoteIcon /></ListItemIcon>
-            <ListItemText primary='Lyrics' />
-          </ListItem>
+          <ListItemLink to="/lyrics" primary="Lyrics" icon={<MusicNoteIcon />} />
+          <ListItemLink to="/about" primary="About" icon={<InfoIcon />} />
         </List>
         <Divider />
       </div>
     );
 
     return (
+      <Router>
         <AppBar position="static">
             <Toolbar>
               <React.Fragment key={directionOfSidebar}>
@@ -81,11 +86,16 @@ function Navigation() {
                 </Drawer>
               </React.Fragment>
                 
-                <Typography variant="h6" className={classes.title}>
-                    React Playground
-                </Typography>
+              <Typography variant="h6" className={classes.title}>
+                  React Playground
+              </Typography>
             </Toolbar>    
         </AppBar>
+        
+        <Route path="/lyrics" component={Lyrics} />
+        <Route path="/about" component={About} /> 
+        <Redirect exact from="/" to="lyrics" />
+      </Router>      
     );
 }
 
