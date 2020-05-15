@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { Container } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,15 +8,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function About() {
+const About = () => {
   const classes = useStyles();
 
   return (
     <Container className={classes.root}>
       <h1>About</h1>
-      <p>React Playground using create-react-app, Material-UI and React Router</p>
+      <p>
+        React Playground using create-react-app, Material-UI and React Router
+      </p>
     </Container>
   );
-}
+};
 
 export default About;
