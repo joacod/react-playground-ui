@@ -1,13 +1,18 @@
 import React from "react";
 import LyricsSearch from "./LyricsSearch";
 import LyricsDisplay from "./LyricsDisplay";
-import { Container } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'flex',
+    flexWrap: 'wrap',
     flexGrow: 1,
+    "& > *": {
+      margin: theme.spacing(1),
+    },
   },
 }));
 
@@ -35,10 +40,12 @@ const Lyrics = () => {
   };
 
   return (
-    <Container className={classes.root}>
-      <LyricsSearch lyricsData={data} onSubmit={getLyrics} />
-      <LyricsDisplay lyricsData={data} />
-    </Container>
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <LyricsSearch lyricsData={data} onSubmit={getLyrics} />
+        <LyricsDisplay lyricsData={data} />
+      </Grid>
+    </div>
   );
 };
 

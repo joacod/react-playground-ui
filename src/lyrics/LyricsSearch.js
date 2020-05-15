@@ -5,12 +5,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import FaceIcon from "@material-ui/icons/Face";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-  form: {
+  space: {
     "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
+      margin: theme.spacing(1),      
     },
   },
 }));
@@ -26,44 +26,50 @@ const LyricsSearch = (props) => {
   };
 
   return (
-    <Card>
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <h1>Find Lyrics</h1>
-        <TextField
-          id="artist"
-          label="Artist"
-          variant="outlined"
-          value={artist}
-          onChange={(e) => setArtist(e.target.value)}
-          required
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <FaceIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <TextField
-          id="song"
-          label="Song"
-          variant="outlined"
-          value={song}
-          onChange={(e) => setSong(e.target.value)}
-          required
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <MusicNoteIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Button variant="contained" color="primary" type="submit">
-          <SearchIcon /> Search
-        </Button>
-      </form>
-    </Card>
+    <Grid item xs={4}>
+      <Card>
+        <form className={classes.space} onSubmit={handleSubmit}>
+          <h1>Find Lyrics</h1>
+          <div className={classes.space}>
+            <TextField
+              id="artist"
+              label="Artist"
+              variant="outlined"
+              value={artist}
+              onChange={(e) => setArtist(e.target.value)}
+              required
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <FaceIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              id="song"
+              label="Song"
+              variant="outlined"
+              value={song}
+              onChange={(e) => setSong(e.target.value)}
+              required
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <MusicNoteIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </div>
+          <div className={classes.space}>
+            <Button variant="contained" color="primary" type="submit">
+              <SearchIcon /> Search
+            </Button>
+          </div>
+        </form>
+      </Card>
+    </Grid>
   );
 };
 
