@@ -14,15 +14,23 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width: "90%",
   },
+  error: {
+    color: "red",
+  },
 }));
 
 const LyricsDisplay = (props) => {
   const classes = useStyles();
   return (
     <Grid item xs={8}>
-      <Card className={classes.space} >
+      <Card className={classes.space}>
         <h1>Lyrics</h1>
-        <FormControl  className={classes.margin}>
+
+        {props.error !== null && (
+          <h2 className={classes.error}>{props.error}</h2>
+        )}
+
+        <FormControl className={classes.margin}>
           <TextField
             id="lyrics"
             label="Song Lyric"

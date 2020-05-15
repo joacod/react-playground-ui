@@ -7,8 +7,8 @@ import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
     flexGrow: 1,
     "& > *": {
       margin: theme.spacing(1),
@@ -17,14 +17,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const dataExample = {
-  Artist: "beatles",
-  SongTitle: "come together",
+  Artist: "",
+  SongTitle: "",
   Lyrics: "",
 };
 
 const Lyrics = () => {
   const classes = useStyles();
   const [data, setData] = React.useState(dataExample);
+  const [error, setError] = React.useState("");
 
   const getLyrics = async function (artist, song) {
     // .Net Core Web API
@@ -33,17 +34,28 @@ const Lyrics = () => {
     // Go Web API
     const lyricsUrl = "http://localhost:8080/api/v1/lyrics/";
 
-    const response = await axios.get(lyricsUrl + artist + "/" + song);
-    setData(response.data);
-
-    return response.data;
+    await axios
+      .get(lyricsUrl + artist + "/" + song)
+      .then((response) => {
+        setError("");
+        setData(response.data);
+        return response.data;
+      })
+      .catch((err) => {
+        setData(dataExample);
+        if (err.response) {
+          setError(err.response.data);
+        } else {
+          setError("Something went wrong, try again in a few moments");
+        }
+      });
   };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         <LyricsSearch lyricsData={data} onSubmit={getLyrics} />
-        <LyricsDisplay lyricsData={data} />
+        <LyricsDisplay lyricsData={data} error={error} />
       </Grid>
     </div>
   );
