@@ -10,6 +10,8 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import InfoIcon from '@material-ui/icons/Info';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAlt';
 import clsx from 'clsx';
 import {
   BrowserRouter as Router,
@@ -19,6 +21,8 @@ import {
 import ListItemLink from './ListItemLink';
 import Lyrics from '../lyrics/Lyrics';
 import About from '../about/About';
+import Counter from '../counter/Counter';
+import CounterClass from '../counter/CounterClass';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -67,7 +71,9 @@ function Navigation() {
       >
         <List>
           <ListItemLink to="/lyrics" primary="Lyrics" icon={<MusicNoteIcon />} />
-          <ListItemLink to="/about" primary="About" icon={<InfoIcon />} />
+          <ListItemLink to="/counter-class" primary="Counter Class" icon={<SentimentDissatisfiedIcon />} />
+          <ListItemLink to="/counter" primary="Counter Functional" icon={<SentimentSatisfiedAltIcon />} />          
+          <ListItemLink to="/about" primary="About" icon={<InfoIcon />} />          
         </List>
         <Divider />
       </div>
@@ -94,6 +100,8 @@ function Navigation() {
         
         <Route path="/lyrics" component={Lyrics} />
         <Route path="/about" component={About} /> 
+        <Route path="/counter" component={Counter} /> 
+        <Route path="/counter-class" component={CounterClass} /> 
         <Redirect exact from="/" to="lyrics" />
       </Router>      
     );
